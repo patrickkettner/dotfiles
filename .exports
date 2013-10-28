@@ -1,0 +1,27 @@
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$HOME/.launchd.conf:$HOME/local/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin:/usr/X11/bin:/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin
+
+# use the homebrew verison of vim
+export EDITOR=$(which vim)
+
+export ANDROID_SDK_ROOT=$(brew info android-sdk | awk '/^\/usr/{print $1}')
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
+export HISTCONTROL=ignoredups
+
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:e"
+
+# Prefer US English and use UTF-8
+export LANG="en_US"
+export LC_ALL="en_US.UTF-8"
+
+# Highlight section titles in manual pages
+export LESS_TERMCAP_md="$ORANGE"
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"

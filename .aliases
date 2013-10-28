@@ -1,0 +1,67 @@
+# update all the things
+alias up='
+  sudo softwareupdate -i -a;
+  brew update;
+  brew upgrade;
+  brew cleanup;
+  sudo gem update;
+  ulimit -n 2048 && npm update npm -g;
+  npm update -g;
+  upgrade_oh_my_zsh;
+  vim +BundleInstall! +qall!;
+  clear
+'
+# git log with one-line-per-commit and graphing
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+
+# togggle if icons are visible on the desktop
+alias toggleDesktop="defaults-togggle com.apple.finder CreateDesktop; killall Finder"
+
+# cd up to the root of the current git repo
+alias git-root='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+
+# open all files edited in the last commit in tabs in vim
+alias lastedit='vim -p $(git whatchanged -n1 --pretty=format: | awk '\''NF {print $6}'\'')'
+
+# strip out the colour from piped commands
+alias nocolor='perl -pe "s/\e\[?.*?[\@-~]//g"'
+
+# open vim to edit my .vimrc
+alias vimrc='vim $HOME/.vimrc'
+
+# turnoff zsh's command spellchecking
+alias grunt="nocorrect grunt"
+alias json="nocorrect json"
+alias nave='nocorrect nave'
+alias tmux='nocorrect tmux'
+alias htop='nocorrect htop'
+alias vcsh='nocorrect vcsh'
+alias rar='nocorrect rar'
+alias gh='nocorrect gh'
+alias yo='nocorrect yo'
+
+# shorthand aliases for commonly used commands
+alias vi='vim'
+alias b='brew'
+alias e='exit'
+alias g='git'
+alias v='vim'
+
+# get public ip address
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null"
+
+# get local ip address
+alias lip="ipconfig getifaddr en0"
+
+# get all ip addresses - change /inet / to /inet/ if you want to include ipv6
+alias ips="ifconfig -a  | awk '/inet /{print \$2}' && ip"
+
+# Gzip-enabled `curl`
+alias gurl='curl --compressed'
+
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"
+
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+  alias "$method"="lwp-request -m '$method'"
+done

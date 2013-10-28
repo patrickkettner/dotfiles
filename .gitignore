@@ -1,0 +1,7 @@
+# Folder View config
+.DS_Store
+
+# temp config data for tern - ternjs.net
+.tern-port
+
+npm-debug.log

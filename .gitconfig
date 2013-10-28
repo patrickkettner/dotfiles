@@ -1,0 +1,46 @@
+[credential]
+  helper = osxkeychain
+[push]
+  default = simple
+[user]
+  name = Patrick Kettner
+  email = patrickkettner@gmail.com
+[alias]
+  s = status
+  co = checkout
+  cl = clone --recursive
+  standup = log --since yesterday --author="$(git config --global user.name)" --pretty=oneline --branches=* --decorate
+  unadd = reset HEAD
+  beam-me-up = push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[core]
+  excludesfile = ~/.gitignore
+  # Treat spaces before tabs, lines that are indented with 8 or more spaces, and
+  # all kinds of trailing whitespace as an error.
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of
+  # a line
+  whitespace = space-before-tab,indent-with-non-tab,trailing-space
+# URL shorthands
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+  # Any GitHub repo with my username should be checked out r/w by default
+  # # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
+[url "git@github.com:patrickkettner/"]
+  insteadOf = "git://github.com/patrickkettner/"
+[help]
+  autocorrect = 1

@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+# Shamelessly copied from https://github.com/mathiasbynens/dotfiles
+
+brew tap homebrew/dupes
+brew tap homebrew/versions
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# things I use constantly
+brew install reattach-to-user-namespace
+brew install the_silver_searcher
+brew install tmux
+brew install youtube-dl
+brew install zsh-completions
+
+# database
+brew install redis
+brew install mongodb
+brew install sqlite
+
+# webdev
+brew install lynx
+brew install nginx
+brew install closure-compiler
+brew install ios-webkit-debug-proxy
+brew install casperjs
+brew install webkit2png
+
+# VCS
+brew install bazaar
+brew install gh
+brew install gist
+brew install git-extras
+brew install mercurial
+
+# dev
+brew install android-sdk
+brew install cmake
+brew install dos2unix
+brew install htop-osx
+brew install kdiff3
+brew install maven
+brew install nload
+brew install nmap
+brew install p7zip
+brew install par2
+brew install pv
+brew install rlwrap
+brew install scons
+brew install socat
+brew install terminal-notifier
+brew install unrar
+
+#languages
+brew install clisp
+brew install clojure
+brew install erlang
+brew install ghc
+brew install go
+brew install groovy
+brew install haskell-platform
+brew install lua
+brew install node
+brew install objective-caml
+brew install sbcl
+brew install scala
+
+#improved defaults
+brew install base64
+brew install bash
+brew install coreutils
+brew install curl
+brew install findutils
+brew install gcc47
+brew install git
+brew install gnu-getopt
+brew install gnu-indent
+brew install gnu-prolog
+brew install gnu-sed
+brew install gnu-tar
+brew install gnutls
+brew install grep
+brew install md5sha1sum
+brew install mysql
+brew install openssl
+brew install vim
+brew install wget
+brew install zsh
+
+# iamge manipulation and optimization
+brew install gifsicle
+brew install imagemagick
+brew install jpeg
+brew install jpeg-turbo
+brew install jpegoptim
+brew install libpng
+brew install optipng
+brew install pngcrush
+brew install svg2png
+brew install webp
+brew install zopfli
+
+# audtio/video stuff
+brew install ffmpeg
+brew install ffmpeg2theora
+brew install mpg123
+brew install mplayer
+brew install mad
+brew install rtmpdump
+brew install theora
+
+# font stuff
+brew install fontforge
+brew install ttf2eot
+
+# Remove outdated versions from the cellar
+brew cleanup
