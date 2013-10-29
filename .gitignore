@@ -4,4 +4,8 @@
 # temp config data for tern - ternjs.net
 .tern-port
 
+" Even though I use it, most projects don't I
+" work with want terns config commited to it
+.tern-project
+
 npm-debug.log
