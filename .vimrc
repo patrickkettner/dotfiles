@@ -24,6 +24,8 @@ nnoremap <silent> <Leader>u :GundoToggle<CR> " Toggle the undo tree
 nnoremap + <C-a>                             " increment digits with +
 nnoremap - <C-x>                             " decrement digits with +
 nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <leader>gb :''Gbrowse<cr>           " Open git repo on current line
+xmap <leader>gb :Gbrowse<cr>
 
 map <leader>qq :cclose<CR>                   " Close Quickfix window (,qq)
 map <C-k> <C-W>k                             " Move to a split above
@@ -54,6 +56,8 @@ set lazyredraw                            " prevents screen from redraw during
 set lcs=tab:▸\ ,trail:·,nbsp:_            " Show 'invisible' characters
 set list listchars=tab:→\ ,trail:▸        " show tabs and trailing spaces
 set nobackup                              " do not write backup files
+set nojoinspaces                          " Use 1 space after joining lines
+                                          " ending with a period, rather than 2,
 set nomore                                " hide the --More-- thing
 set nonumber                              " remove line numvers on the left
 set nostartofline                         " Don’t reset cursor to start of line
@@ -61,6 +65,7 @@ set nostartofline                         " Don’t reset cursor to start of lin
 set noswapfile                            " don't write swap files
 set nrformats-=octal                      " dont incrementing octal numbers
 set pastetoggle=<Leader>p                 " toggle paste mode with F2
+set scrolloff=5                           " keep 5 lines between cursor and edge
 set shell=/bin/zsh                        " set the shell var for ! commands
 set shiftround                            " jump to the nearest tabstop or
                                           " shiftwidth when indenting a line
@@ -81,6 +86,11 @@ set virtualedit+=block                    " go beyond the end of the line and
                                           " when in visual block mode.
 set wildmenu                              " Enhance command-line completion
 set wildmode=longest,list,full
+
+" Delete comment character when joining commented lines
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
 
 " save undo data between vim sessions
 if has("persistent_undo")
