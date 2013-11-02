@@ -13,25 +13,24 @@ endif
 set nocompatible
 filetype off
 
-let mapleader = ","                          " , is easier to reach than /
+let mapleader = ","                       " , is easier to reach than /
 
-cmap ~? ~/                                    " I only type ~? on accident
+cmap ~? ~/                                " I only type ~? on accident
 
-noremap <F1> <Esc>                           " If I want help, i'll type help
+noremap <F1> <Esc>                        " If I want help, i'll type help
 
-nnoremap Y y$                                " Make Y consistent with C and D.
+nnoremap Y y$                             " Make Y consistent with C and D.
 nnoremap <silent> <Leader>u :GundoToggle<CR> " Toggle the undo tree
-nnoremap + <C-a>                             " increment digits with +
-nnoremap - <C-x>                             " decrement digits with +
+nnoremap + <C-a>                          " increment digits with +
+nnoremap - <C-x>                          " decrement digits with +
 nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
-nnoremap <leader>gb :''Gbrowse<cr>           " Open git repo on current line
+nnoremap <leader>gb :''Gbrowse<cr>        " Open git repo on current line
 xmap <leader>gb :Gbrowse<cr>
 
-map <leader>qq :cclose<CR>                   " Close Quickfix window (,qq)
-map <C-k> <C-W>k                             " Move to a split above
-map <C-j> <C-W>j                             " Move to a split below
-map <C-H> <C-W>h                             " Move to a split right
-map <C-L> <C-W>l                             " Move to a split left
+map <C-k> <C-W>k                          " Move to a split above
+map <C-j> <C-W>j                          " Move to a split below
+map <C-H> <C-W>h                          " Move to a split right
+map <C-L> <C-W>l                          " Move to a split left
 
 set expandtab                             " Use spaces, rather than literal tabs
 set tabstop=2                             " Number of spaces a tab is equal to
@@ -42,6 +41,7 @@ set softtabstop=2                         " tabstop specifically for insert mode
 set autoindent                            " Copy indent from current line
                                           " "when starting a new line
 set backspace=indent,eol,start            " make backspace work properly
+set cmdheight=2                           " skip 'hit enter to continue' message
 set colorcolumn=81                        " Highlight certain columns
 set complete-=i                           " removes included files from the
                                           " completeion list, speeding it up
@@ -69,7 +69,6 @@ set scrolloff=5                           " keep 5 lines between cursor and edge
 set shell=/bin/zsh                        " set the shell var for ! commands
 set shiftround                            " jump to the nearest tabstop or
                                           " shiftwidth when indenting a line
-set shortmess=a                           " skip 'hit enter to continue' message
 set showcmd                               " shows command in bottom left
 set smartcase                             " ignore ignorecase if there is any
                                           " capitilization at all
@@ -140,7 +139,6 @@ endif
 
 if has("autocmd")
   "syntax highlighting for various files
-  au BufNewFile,BufRead *.handlebars set ft=handlebars
   au BufNewFile,BufRead *.styl       set ft=stylus
   au BufNewFile,BufRead *.less       set ft=less
   au BufNewFile,BufRead *.scss       set ft=scss.css
@@ -156,6 +154,9 @@ if has("autocmd")
 
   " Add omnicompletion to CSS
   au FileType css set omnifunc=csscomplete#CompleteCSS
+
+  " reset cmdheight to 1 after loading, to prevent Press ENTER messages
+  au VimEnter * set cmdheight=1
 endif
 
 function! <SID>StripTrailingWhitespaces()
