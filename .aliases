@@ -15,7 +15,7 @@ alias up='
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 # togggle if icons are visible on the desktop
-alias toggleDesktop="defaults-togggle com.apple.finder CreateDesktop; killall Finder"
+alias toggleDesktop="defaults-toggle com.apple.finder CreateDesktop; killall Finder"
 
 # cd up to the root of the current git repo
 alias git-root='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
@@ -65,3 +65,6 @@ alias c="tr -d '\n' | pbcopy"
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"
 done
+
+# Lock the screen (when going AFK
+alias afk="pmset sleepnow"
