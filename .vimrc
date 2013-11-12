@@ -1,4 +1,4 @@
-" auto syntax higlighting, file based indention, and file detection plugins
+" auto syntax highlighting, file based indention, and file detection plugins
 filetype plugin indent on
 
 if isdirectory(expand("~/.vim/bundle/vundle/"))
@@ -27,6 +27,8 @@ nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <leader>gb :''Gbrowse<cr>        " Open git repo on current line
 xmap <leader>gb :Gbrowse<cr>
 
+nmap <silent> <leader>s :set spell!<CR>   " Toggle spell checking
+
 map <C-k> <C-W>k                          " Move to a split above
 map <C-j> <C-W>j                          " Move to a split below
 map <C-H> <C-W>h                          " Move to a split right
@@ -44,7 +46,7 @@ set backspace=indent,eol,start            " make backspace work properly
 set cmdheight=2                           " skip 'hit enter to continue' message
 set colorcolumn=81                        " Highlight certain columns
 set complete-=i                           " removes included files from the
-                                          " completeion list, speeding it up
+                                          " completion list, speeding it up
 set cpoptions+=$                          " put a '$' at the end of changed text
 set gdefault                              " defaults to global replacement
 set hidden                                " allows for unsaved buffers
@@ -52,18 +54,18 @@ set history=9999                          " store last 9999 commands in history
 set ignorecase                            " during a search, that is
 set laststatus=2                          " always show status line
 set lazyredraw                            " prevents screen from redraw during
-                                          " macros, registers etc
+                                          " macros, registers etc.
 set lcs=tab:▸\ ,trail:·,nbsp:_            " Show 'invisible' characters
 set list listchars=tab:→\ ,trail:▸        " show tabs and trailing spaces
 set nobackup                              " do not write backup files
 set nojoinspaces                          " Use 1 space after joining lines
                                           " ending with a period, rather than 2,
 set nomore                                " hide the --More-- thing
-set nonumber                              " remove line numvers on the left
-set nostartofline                         " Don’t reset cursor to start of line
+set nonumber                              " remove line numbers on the left
+set nostartofline                         " don't reset cursor to start of line
                                           " when moving around when
 set noswapfile                            " don't write swap files
-set nrformats-=octal                      " dont incrementing octal numbers
+set nrformats-=octal                      " don't incrementing octal numbers
 set pastetoggle=<Leader>p                 " toggle paste mode with F2
 set scrolloff=5                           " keep 5 lines between cursor and edge
 set shell=/bin/zsh                        " set the shell var for ! commands
@@ -71,7 +73,7 @@ set shiftround                            " jump to the nearest tabstop or
                                           " shiftwidth when indenting a line
 set showcmd                               " shows command in bottom left
 set smartcase                             " ignore ignorecase if there is any
-                                          " capitilization at all
+                                          " capitalization at all
 set showmatch                             " when the cursor is over a bracket,
                                           " highlight the matching one
 set smarttab
