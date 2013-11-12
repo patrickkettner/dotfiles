@@ -74,6 +74,7 @@ brew install base64
 brew install bash
 brew install coreutils
 brew install curl
+brew install emacs
 brew install findutils
 brew install gcc47
 brew install git
