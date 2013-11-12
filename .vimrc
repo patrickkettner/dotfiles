@@ -145,7 +145,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.less       set ft=less.css
 
   " automatically reload vimrc when it's saved
-  au BufWritePost .vimrc so ~/.vimrc
+  au BufWritePost .vimrc so $MYVIMRC
 
   " highlight current line
   au WinLeave * set nocursorline nocursorcolumn
