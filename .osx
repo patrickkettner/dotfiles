@@ -198,4 +198,4 @@ sudo mdutil -E / > /dev/null
 [ -e ~/Library/Application\ Support/Dock/*.db ] && rm ~/Library/Application\ Support/Dock/*.db
 
 # Kill affected applications
-for app in Transmission Dashboard Safari Finder Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done
+for app in Transmission Safari Finder Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done
