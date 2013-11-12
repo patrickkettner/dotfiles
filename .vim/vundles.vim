@@ -6,6 +6,7 @@ Bundle 'JSON.vim'
 
 " Better javascript syntax highlighting for browser JS
 Bundle 'jelera/vim-javascript-syntax'
+Bundle "pangloss/vim-javascript"
 
 " syntax for handlebars templating files
 Bundle 'nono/vim-handlebars'
