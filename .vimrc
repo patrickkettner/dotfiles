@@ -159,6 +159,9 @@ if has("autocmd")
 
   " reset cmdheight to 1 after loading, to prevent Press ENTER messages
   au VimEnter * set cmdheight=1
+
+  " set a line length to 72, enable spell checking, and autowrap paragraphs
+  au FileType gitcommit set tw=72 spell formatoptions+=a
 endif
 
 function! <SID>StripTrailingWhitespaces()
