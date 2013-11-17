@@ -32,7 +32,7 @@ brew install webkit2png
 
 # VCS
 brew install bazaar
-brew install gh
+brew install hub
 brew install gist
 brew install git-extras
 brew install mercurial
