@@ -47,6 +47,7 @@ set cmdheight=2                           " skip 'hit enter to continue' message
 set colorcolumn=81                        " Highlight certain columns
 set complete-=i                           " removes included files from the
                                           " completion list, speeding it up
+set clipboard=unnamed                     " use the system keyboard by default
 set cpoptions+=$                          " put a '$' at the end of changed text
 set gdefault                              " defaults to global replacement
 set hidden                                " allows for unsaved buffers
@@ -129,15 +130,17 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
     colorscheme solarized
   catch
   endtry
+  highlight SignColumn ctermbg=none
   set background=dark
+  set hlsearch
 endif
 
 if has("autocmd")
   "syntax highlighting for various files
-  au BufNewFile,BufRead *.styl       set ft=stylus
-  au BufNewFile,BufRead *.less       set ft=less
-  au BufNewFile,BufRead *.scss       set ft=scss.css
-  au BufNewFile,BufRead *.less       set ft=less.css
+  au BufNewFile,BufRead *.styl set ft=stylus
+  au BufNewFile,BufRead *.less set ft=less
+  au BufNewFile,BufRead *.scss set ft=scss.css
+  au BufNewFile,BufRead *.less set ft=less.css
 
   " automatically reload vimrc when it's saved
   au BufWritePost .vimrc so $MYVIMRC
@@ -155,6 +158,9 @@ if has("autocmd")
 
   " set a line length to 72, enable spell checking, and autowrap paragraphs
   au FileType gitcommit set tw=72 spell formatoptions+=a
+
+  " don't list fugutive buffers in buffer list
+  autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
 
 function! <SID>StripTrailingWhitespaces()
