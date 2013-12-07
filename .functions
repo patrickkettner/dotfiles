@@ -94,3 +94,13 @@ width () {
 height () {
   echo $(sips -g pixelHeight $1 | grep -oE "[[:digit:]]{1,}$")
 }
+
+# Ring a bell when a url is up
+isup () {
+  if [ $(curl -sL -w "%{http_code}\\n" "$1" -o /dev/null) -eq 200 ]; then
+    echo "$1 is up";
+    echo -e '\a'
+  else
+    isup "$@"
+  fi
+}
