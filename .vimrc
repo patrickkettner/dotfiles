@@ -116,19 +116,12 @@ if &listchars ==# 'eol:$'
   endif
 endif
 
-
-" Switch syntax highlighting on, when the terminal has colors
+" Set colorscheme, theme and search highlight when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-  set hlsearch
-  highlight SignColumn ctermbg=none
-endif
-
-if has("user_commands")
-  syntax enable
   let g:solarized_termcolors=256
   let g:solarized_termtrans = 1
+  syntax enable
 
   try
     " wrap the colorscheme in a try catch in
