@@ -36,7 +36,7 @@ map <C-L> <C-W>l                          " Move to a split left
 
 set expandtab                             " Use spaces, rather than literal tabs
 set tabstop=2                             " Number of spaces a tab is equal to
-set shiftwidth=2                          " sets width of tab during retabing
+set shiftwidth=2                          " sets width of tab during retabbing
 set softtabstop=2                         " tabstop specifically for insert mode
 
 
@@ -62,7 +62,7 @@ set nojoinspaces                          " Use 1 space after joining lines
                                           " ending with a period, rather than 2,
 set nomore                                " hide the --More-- thing
 set nonumber                              " remove line numbers on the left
-set nostartofline                         " don't reset cursor to start of line
+set nostartofline                         " don’t reset cursor to start of line
                                           " when moving around when
 set noswapfile                            " don't write swap files
 set nrformats-=octal                      " don't incrementing octal numbers
