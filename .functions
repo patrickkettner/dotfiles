@@ -50,9 +50,19 @@ function gz() {
   gzip -c "$1" | wc -c
 }
 
-# open all files matching an ag pattern
+# open all files matching an ag pattern in vim
 function edit() {
   vim -p $(ag -l "$@") -c "execute \"/$1\""
+}
+
+# open everything edited on the last commit in tabs in vim
+function lastedit() {
+  vim -p $(git whatchanged -n1 --pretty=format: | awk 'NF {print $6}')
+}
+
+# open all unstaged changes in tabs in vim
+function changed() {
+  vim -p $(git status -s | awk '{print $2}')
 }
 
 function defaults-toggle() {
