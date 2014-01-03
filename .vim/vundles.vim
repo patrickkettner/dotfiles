@@ -63,8 +63,8 @@ Bundle 'othree/html5.vim'
 " Bunch o' commenting utils, including easy toggling
 Bundle 'scrooloose/nerdcommenter'
 
-" Left pane file explorer
-Bundle 'scrooloose/nerdtree'
+" improve the default file explorer
+Bundle 'tpope/vim-vinegar'
 
 " visualization of the undo tree
 Bundle 'sjl/gundo.vim'

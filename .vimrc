@@ -21,8 +21,6 @@ noremap <F1> <Esc>                        " If I want help, i'll type help
 
 nnoremap Y y$                             " Make Y consistent with C and D.
 nnoremap <silent> <Leader>u :GundoToggle<CR> " Toggle the undo tree
-nnoremap + <C-a>                          " increment digits with +
-nnoremap - <C-x>                          " decrement digits with +
 nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 nnoremap <leader>gb :''Gbrowse<cr>        " Open git repo on current line
 xmap <leader>gb :Gbrowse<cr>
