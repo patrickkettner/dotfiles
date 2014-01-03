@@ -9,3 +9,6 @@
 .tern-project
 
 npm-debug.log
+
+# node_modules shouldn't be checked in to a repo, just the package.json
+node_modules
