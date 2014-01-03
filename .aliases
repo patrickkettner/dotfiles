@@ -35,8 +35,8 @@ alias tmux='nocorrect tmux'
 alias htop='nocorrect htop'
 alias vcsh='nocorrect vcsh'
 alias rar='nocorrect rar'
-alias gh='nocorrect gh'
 alias yo='nocorrect yo'
+alias git='hub'
 
 # shorthand aliases for commonly used commands
 alias vi='vim'
