@@ -4,6 +4,7 @@ alias up='
   brew update;
   brew upgrade;
   brew cleanup;
+  sudo gem update --system;
   sudo gem update;
   ulimit -n 2048 && npm update npm -g;
   npm update -g;
