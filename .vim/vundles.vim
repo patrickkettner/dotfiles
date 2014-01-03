@@ -4,14 +4,14 @@ Bundle 'jade.vim'
 " better syntax highlighting for JSON files
 Bundle 'JSON.vim'
 
-" Better javascript syntax highlighting for browser JS
+" better javascript syntax highlighting for browser JS
 Bundle 'jelera/vim-javascript-syntax'
 Bundle "pangloss/vim-javascript"
 
 " syntax for handlebars templating files
 Bundle 'mustache/vim-mode'
 
-" Syntax checking library
+" syntax checking library
 Bundle 'scrooloose/syntastic'
 
 " syntax highlighting for Stylus
@@ -27,40 +27,40 @@ Bundle 'HTML-AutoCloseTag'
 " the currently selected element
 Bundle 'Valloric/MatchTagAlways'
 
-" Tab completion of words inside of a search
+" tab completion of words inside of a search
 Bundle 'SearchComplete'
 
 " git diff in the SignColumn
-Bundle 'airblade/vim-gitgutter'
+Bundle 'mhinz/vim-signify'
 
 " lean statusline
 Bundle 'bling/vim-airline'
 
-" Adds Syntastic support to vimscript/vimrc
+" syntastic support to vimscript/vimrc
 Bundle 'dbakker/vim-lint'
 
-" Amazingly simple text filtering/alignment
+" amazingly simple text filtering/alignment
 Bundle 'godlygeek/tabular'
 
-" Extends % to match opposite tags in more languages
+" extends % to match opposite tags in more languages
 Bundle 'matchit.zip'
 
 " high speed html creation
 Bundle 'mattn/emmet-vim'
 
-" A fancy start screen for Vim
+" a fancy start screen for Vim
 Bundle 'mhinz/vim-startify'
 
-" Automatically organize and arrage CSS/SCSS/Stylus
+" automatically organize and arrage CSS/SCSS/Stylus
 Bundle 'miripiruni/CSScomb-for-Vim'
 
-" Utils for working with NodeJS - like Rails.vim, for node
+" utils for working with NodeJS - like Rails.vim, for node
 Bundle 'moll/vim-node'
 
 " omnicompletion for HTML5,ARIA and a few others
 Bundle 'othree/html5.vim'
 
-" Bunch o' commenting utils, including easy toggling
+" bunch o' commenting utils, including easy toggling
 Bundle 'scrooloose/nerdcommenter'
 
 " improve the default file explorer
@@ -75,14 +75,14 @@ Bundle 'tpope/vim-abolish'
 " git wrapper for vim
 Bundle 'tpope/vim-fugitive'
 
-" Lightning fast omnicompletion
+" lightning fast omnicompletion
 Bundle 'Valloric/YouCompleteMe'
 
-" Solarized color theme
+" solarized color theme
 Bundle 'altercation/vim-colors-solarized'
 
-" Full path fuzzy file, buffer, mru, tag finder
+" full path fuzzy file, buffer, mru, tag finder
 Bundle 'kien/ctrlp.vim'
 
-" adds code anaylsis support for javascript
+" code anaylsis support for javascript
 Bundle 'marijnh/tern_for_vim'
