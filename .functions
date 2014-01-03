@@ -104,3 +104,10 @@ isup () {
     isup "$@"
   fi
 }
+
+y() {
+  for video in "$@"
+  do
+    youtube-dl "$video"
+  done
+}
