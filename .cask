@@ -7,6 +7,7 @@ function installcask() {
   brew cask install "${@}" 2> /dev/null
 }
 
+installcask betterzipql
 installcask calibre
 installcask dropbox
 installcask google-chrome
@@ -14,6 +15,9 @@ installcask google-chrome-canary
 installcask imagealpha
 installcask imageoptim
 installcask limechat
+installcask qlcolorcode
+installcask qlstephen
 installcask transmission
+installcask vagrant
 installcask virtualbox
 installcask vlc
