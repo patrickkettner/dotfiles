@@ -62,7 +62,7 @@ function lastedit() {
 
 # open all unstaged changes in tabs in vim
 function changed() {
-  vim -p $(git status -s | awk '{print $2}')
+  vim -p $(git status -s | awk '!/^D/ {print $2}')
 }
 
 function defaults-toggle() {
