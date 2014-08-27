@@ -27,10 +27,10 @@ alias nocolor='perl -pe "s/\e\[?.*?[\@-~]//g"'
 # open vim to edit my .vimrc
 alias vimrc='vim $HOME/.vimrc'
 
+alias emacs="/usr/local/bin/emacs-24.3"
 # turnoff zsh's command spellchecking
 alias grunt="nocorrect grunt"
 alias json="nocorrect json"
-alias nave='nocorrect nave'
 alias tmux='nocorrect tmux'
 alias htop='nocorrect htop'
 alias vcsh='nocorrect vcsh'

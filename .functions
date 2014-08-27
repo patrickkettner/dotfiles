@@ -57,7 +57,7 @@ function edit() {
 
 # open everything edited on the last commit in tabs in vim
 function lastedit() {
-  vim -p $(git whatchanged -n1 --pretty=format: | awk 'NF {print $6}')
+  vim -p $(for i in $(git whatchanged -n${1:-1} --pretty=format: | awk 'NF {print $6}'); do echo `git rev-parse --show-cdup`$i; done)
 }
 
 # open all unstaged changes in tabs in vim
