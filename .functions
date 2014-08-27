@@ -72,11 +72,6 @@ function defaults-toggle() {
 # (re)use zsh completion
 compdef _defaults defaults-toggle=defaults
 
-# Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$@"
-}
-
 # Use Git’s colored diff when available
 hash git &>/dev/null
 if [ $? -eq 0 ]; then
