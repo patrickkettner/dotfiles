@@ -11,7 +11,20 @@
   cl = clone --recursive
   standup = log --since yesterday --author="$(git config --global user.name)" --pretty=oneline --branches=* --decorate
   unadd = reset HEAD
-  beam-me-up = push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+  # create the current branch at the origin (or whatever the first argument is)
+  beam-me-up = "!f() { git push --set-upstream ${1:-origin} $(git rev-parse --abbrev-ref HEAD); }; f"
+  # Find branches containing commit
+  fb = "!f() { git branch -a --contains $1; }; f"
+  # Find tags containing commit
+  ft = "!f() { git describe --always --contains $1; }; f"
+  # Find commits by sourcecode
+  fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+  # Find commits by commit message
+  fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+  # shorcut for hub's `pull-request` command
+  pr = pull-request
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  root = "!f() { [ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`}; f"email = patrickkettner@gmail.com
 
 [diff]
   tool = vimdiff
